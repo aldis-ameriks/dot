@@ -1,0 +1,14 @@
+[user]
+	name = Aldis Ameriks
+	email = aldis.ameriks@gmail.com
+[core]
+	editor = nvim
+	excludesfile = /Users/aldis.ameriks/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/aldis.ameriks/.stCommitMsg
