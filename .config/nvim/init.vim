@@ -43,6 +43,7 @@ Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install tern' }
 
 " Extras
 Plug 'christoomey/vim-tmux-navigator'
@@ -74,6 +75,12 @@ let g:airline_powerline_fonts = 1
 
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
+
+" Tern shortcuts
+nnoremap <space>td :TernDef<CR>
+nnoremap <space>ttd :TernDefTab<CR>
+nnoremap <space>tsd :TernDefSplit<CR>
+
 
 " Tab Shortcuts
 nnoremap tk :tabfirst<CR>
