@@ -169,6 +169,8 @@ command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 let g:AutoClosePumvisible = {"ENTER": "", "ESC": ""}
+inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup()."\<CR>" : "\<CR>"
+
 
 "imap <C-e> --exclude=\*.{spec.js,robot,json}
 
