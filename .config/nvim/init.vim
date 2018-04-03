@@ -48,6 +48,8 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install tern' }
 " Extras
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
+Plug 'elentok/plaintasks.vim'
+Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
 
 set nu
