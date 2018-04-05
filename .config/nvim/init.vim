@@ -64,7 +64,18 @@ set hlsearch
 " Because using mouse sometimes is nice too
 set mouse=a
 
-colorscheme nova
+" Color schemes
+" Usable base16 themes
+"base16-brewer
+"base16-chalk
+"base16-classic-dark
+"base16-material-darker
+let base16colorspace=256
+syntax enable
+set background=dark
+set termguicolors
+colorscheme base16-classic-dark
+let g:airline_theme='deep_space'
 
 let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
