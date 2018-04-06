@@ -7,6 +7,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-webdevicons'
+Plug 'majutsushi/tagbar'
+Plug 'altercation/vim-colors-solarized'
 
 " Syntax
 Plug 'othree/html5.vim'
@@ -14,6 +16,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'moll/vim-node'
+"Plug 'scrooloose/syntastic'
+Plug 'elzr/vim-json'
 
 " Project navigation
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
@@ -23,6 +27,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
 Plug 'eugen0329/vim-esearch'
+Plug 'jistr/vim-nerdtree-tabs'
 
 " File navigation
 Plug 'Lokaltog/vim-easymotion'
@@ -33,6 +38,9 @@ Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'
 Plug 'matze/vim-move'
 Plug 'Townk/vim-autoclose'
+Plug 'scrooloose/nerdcommenter'
+Plug 'mitermayer/vim-prettier'
+Plug 'marijnh/tern_for_vim'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -108,6 +116,10 @@ nnoremap <space>l :tabnext<CR>
 nnoremap <space>h :tabprev<CR>
 nnoremap <space>j :tabfirst<CR>
 nnoremap <space>k :tablast<CR>
+nnoremap <c-a-h> :tabprevious<CR>
+nnoremap <c-a-l> :tabnext<CR>
+nnoremap <c-a-j> :tabfirst<CR>
+nnoremap <c-a-k> :tablast<CR>
 
 " Git gutter bindings
 nnoremap gj :GitGutterNextHunk<CR>
@@ -138,13 +150,22 @@ nnoremap <space>gb :Gblame<CR>
 let g:netrw_altv=1
 
 " Quickly find file in NERDTree
-nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
+map <silent><space>n <plug>NERDTreeTabsToggle<CR>
 let g:NERDTreeWinSize=60
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let nerdtree_tabs_open_on_console_startup = 2
+let nerdtree_tabs_smart_startup_focus = 2
 
 " Mapping for finding files in project
 nnoremap <silent><C-P> :GFiles<CR>
-nnoremap <leader>p :Grepper<cr>
+nnoremap <silent><C-E> :History<CR>
+nnoremap <silent><space>f :Grepper<cr>
+nnoremap <silent><leader>f :Grepper<cr>
+nmap gs  <plug>(GrepperOperator)
+xmap gs  <plug>(GrepperOperator)
 
 "let g:grepper.highlight = 1
 "let g:grepper.switch = 0
@@ -164,11 +185,11 @@ let test#javascript#mocha#executable = 'NODE_ENV=test mocha --compilers jsx:babe
 let test#strategy = 'vimux'
 
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-nmap <silent> t<C-n> :TestNearest<CR> " t Ctrl+n
-nmap <silent> t<C-f> :TestFile<CR>    " t Ctrl+f
-nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
-nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
-nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
+nmap <silent> <space>tn :TestNearest<CR> " t Ctrl+n
+nmap <silent> <space>tf :TestFile<CR>    " t Ctrl+f
+nmap <silent> <space>ts :TestSuite<CR>   " t Ctrl+s
+nmap <silent> <space>tl :TestLast<CR>    " t Ctrl+l
+nmap <silent> <space>tg :TestVisit<CR>   " t Ctrl+g
 
 
 " Moving in quickfix window
@@ -184,6 +205,10 @@ command! -bang -nargs=? -complete=dir Files
 let g:AutoClosePumvisible = {"ENTER": "", "ESC": ""}
 inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup()."\<CR>" : "\<CR>"
 
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+ return deoplete#close_popup() . "\<CR>"
+endfunction
 
 "imap <C-e> --exclude=\*.{spec.js,robot,json}
 
@@ -219,4 +244,30 @@ noremap ty "+y
 noremap tY "+Y  // copy a whole line to the clipboard
 noremap tp "+p  // put the text from clipboard after the cursor 
 noremap tP "+P  // put the text from clipboard before the cursor 
+
+" Switch to last open tab
+let g:lasttab = 1
+nmap <c-q> :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
+
+" Syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+" TagBar toggle shortcut
+nmap <F8> :TagbarToggle<CR>
+
+" Prettier configs
+let g:prettier#config#print_width = 100
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#bracket_spacing = 'true'
+nmap <silent> <space>p :Prettier<CR>
 
