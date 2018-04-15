@@ -18,6 +18,7 @@ Plug 'mxw/vim-jsx'
 Plug 'moll/vim-node'
 "Plug 'scrooloose/syntastic'
 Plug 'elzr/vim-json'
+Plug 'mfukar/robotframework-vim'
 
 " Project navigation
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
