@@ -15,18 +15,18 @@ if !has('gui_running')
 endif
 
 " GUI color definitions
-let s:gui00        = "151515"
-let g:base16_gui00 = "151515"
+let s:gui00        = "151515" " Background
+let g:base16_gui00 = "151515" " Background
 let s:gui01        = "202020"
 let g:base16_gui01 = "202020"
-let s:gui02        = "303030"
-let g:base16_gui02 = "303030"
+let s:gui02        = "303030" " Highlighting color
+let g:base16_gui02 = "303030" " Highlighting color
 let s:gui03        = "505050"
 let g:base16_gui03 = "505050"
 let s:gui04        = "B0B0B0"
 let g:base16_gui04 = "B0B0B0"
-let s:gui05        = "D0D0D0"
-let g:base16_gui05 = "D0D0D0"
+let s:gui05        = "D0D0D0" " Text
+let g:base16_gui05 = "D0D0D0" " Text
 let s:gui06        = "E0E0E0"
 let g:base16_gui06 = "E0E0E0"
 let s:gui07        = "F5F5F5"
@@ -35,8 +35,8 @@ let s:gui08        = "AC4142"
 let g:base16_gui08 = "AC4142"
 let s:gui09        = "D28445"
 let g:base16_gui09 = "D28445"
-let s:gui0A        = "F4BF75"
-let g:base16_gui0A = "F4BF75"
+let s:gui0A        = "db9e48" " Highlighting color
+let g:base16_gui0A = "db9e48" " Highlighting color
 let s:gui0B        = "90A959"
 let g:base16_gui0B = "90A959"
 let s:gui0C        = "75B5AA"
