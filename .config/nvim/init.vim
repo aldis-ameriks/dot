@@ -42,6 +42,7 @@ Plug 'Townk/vim-autoclose'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mitermayer/vim-prettier'
 Plug 'marijnh/tern_for_vim'
+Plug 'terryma/vim-expand-region'
 
 " Git
 Plug 'airblade/vim-gitgutter'
