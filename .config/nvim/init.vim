@@ -43,6 +43,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mitermayer/vim-prettier'
 Plug 'marijnh/tern_for_vim'
 Plug 'terryma/vim-expand-region'
+Plug 'lfilho/cosco.vim'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -163,7 +164,8 @@ let nerdtree_tabs_smart_startup_focus = 2
 
 " Mapping for finding files in project
 nnoremap <silent><C-P> :GFiles<CR>
-nnoremap <silent><C-E> :History<CR>
+nnoremap <silent><C-E> :Windows<CR>
+nnoremap <silent><C-A-E> :History<CR>
 nnoremap <silent><space>f :Grepper<cr>
 nnoremap <silent><leader>f :Grepper<cr>
 nmap gs  <plug>(GrepperOperator)
@@ -273,3 +275,5 @@ let g:prettier#config#trailing_comma = 'none'
 let g:prettier#config#bracket_spacing = 'true'
 nmap <silent> <space>p :Prettier<CR>
 
+autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
