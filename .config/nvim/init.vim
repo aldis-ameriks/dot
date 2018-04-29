@@ -275,6 +275,36 @@ let g:prettier#config#trailing_comma = 'none'
 let g:prettier#config#bracket_spacing = 'true'
 nmap <silent> <space>p :Prettier<CR>
 
+fu! EsearchInFiles(argv) abort
+  let original = g:esearch#adapter#ag#options
+  let g:esearch#adapter#ag#options = input('Search options: ')
+  call esearch#init(a:argv)
+  let g:esearch#adapter#ag#options = original
+endfu
+
+fu! EsearchWithOptions(argv) abort
+  let original = g:esearch#adapter#ag#options
+  let g:esearch#adapter#ag#options = '--ignore "*.spec.js" -G .js$'
+  call esearch#init(a:argv)
+  let g:esearch#adapter#ag#options = original
+endfu
+
+noremap  <silent><leader>ft :<C-u>call EsearchInFiles({})<CR>
+xnoremap <silent><leader>ft :<C-u>call EsearchInFiles({'visualmode': 1})<CR>
+
+noremap  <silent><leader>fr :<C-u>call EsearchWithOptions({})<CR>
+xnoremap <silent><leader>fr :<C-u>call EsearchWithOptions({'visualmode': 1})<CR>
+
+let g:esearch#adapter = 'ag'
+
+noremap <C-[> :tabm -<CR>
+noremap <C-]> :tabm +<CR>
+
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+noremap <space>o :noh<CR>
+
 autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 
