@@ -277,3 +277,6 @@ nmap <silent> <space>p :Prettier<CR>
 
 autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+
+noremap  <silent><space>wp :pc!<CR>
+
