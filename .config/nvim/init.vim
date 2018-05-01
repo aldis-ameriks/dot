@@ -310,3 +310,7 @@ autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(co
 
 noremap  <silent><space>wp :pc!<CR>
 
+let g:ale_fixers = {
+      \   'javascript': ['eslint'],
+      \}
+
