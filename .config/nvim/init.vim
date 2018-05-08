@@ -85,7 +85,7 @@ let base16colorspace=256
 syntax enable
 set background=dark
 set termguicolors
-colorscheme base16-classic-dark
+colorscheme darcula
 let g:airline_theme='deep_space'
 
 let g:deoplete#enable_at_startup = 1
