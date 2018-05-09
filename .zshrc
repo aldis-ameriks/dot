@@ -98,3 +98,4 @@ export LANG=C
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 export EDITOR='nvim'
 
+export PATH=$PATH:/usr/local/bin
