@@ -314,3 +314,4 @@ let g:ale_fixers = {
       \   'javascript': ['eslint'],
       \}
 
+noremap <F2> :ALENextWrap<CR>
