@@ -194,6 +194,6 @@ hi NonText ctermfg=244 ctermbg=NONE cterm=NONE guifg=#8e9292 guibg=NONE gui=none
 
 hi TabLineFill ctermfg=188 ctermbg=235 cterm=NONE guifg=#a9b7c6 guibg=#2b2b2b gui=NONE
 hi TabLine ctermfg=188 ctermbg=235 cterm=NONE guifg=#a9b7c6 guibg=#2b2b2b gui=NONE
-hi TabLineSel ctermfg=188 ctermbg=235 cterm=NONE guifg=#aeae80 guibg=#2b2b2b gui=NONE
+hi TabLineSel ctermfg=188 ctermbg=235 cterm=NONE guifg=#a9b7c6 guibg=#515658 gui=NONE
 
 set background=dark
