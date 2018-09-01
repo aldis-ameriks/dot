@@ -219,7 +219,7 @@ endfunction
 " CTRL+S to Save!
 " If the current buffer has never been saved, it will have no name,
 " call the file browser to save it, otherwise just save it.
-command -nargs=0 -bar Update if &modified 
+command -nargs=0 -bar Update if &modified
                            \|    if empty(bufname('%'))
                            \|        browse confirm write
                            \|    else
@@ -246,8 +246,8 @@ map <Leader>vz :call VimuxZoomRunner()<CR>
 " Copy paste to clipboard
 noremap ty "+y
 noremap tY "+Y  // copy a whole line to the clipboard
-noremap tp "+p  // put the text from clipboard after the cursor 
-noremap tP "+P  // put the text from clipboard before the cursor 
+noremap tp "+p  // put the text from clipboard after the cursor
+noremap tP "+P  // put the text from clipboard before the cursor
 
 " Switch to last open tab
 let g:lasttab = 1
