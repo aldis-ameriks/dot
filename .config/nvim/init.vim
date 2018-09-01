@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 
 " Syntax
 Plug 'othree/html5.vim'
@@ -77,15 +78,15 @@ set mouse=a
 
 " Color schemes
 " Usable base16 themes
-"base16-brewer
-"base16-chalk
 "base16-classic-dark
 "base16-material-darker
+"base16-brewer
+"base16-chalk
 let base16colorspace=256
 syntax enable
 set background=dark
 set termguicolors
-colorscheme darcula
+colorscheme gruvbox
 let g:airline_theme='deep_space'
 
 let g:deoplete#enable_at_startup = 1
