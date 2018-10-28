@@ -4,12 +4,12 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " UI
-Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-webdevicons'
-Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
+"Plug 'trevordmiller/nova-vim'
+"Plug 'majutsushi/tagbar'
 
 " Syntax
 Plug 'othree/html5.vim'
@@ -17,23 +17,27 @@ Plug 'pangloss/vim-javascript'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'moll/vim-node'
-"Plug 'scrooloose/syntastic'
 Plug 'elzr/vim-json'
-Plug 'mfukar/robotframework-vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'elixir-editors/vim-elixir'
+"Plug 'jimenezrick/vimerl'
+"Plug 'mfukar/robotframework-vim'
+"Plug 'scrooloose/syntastic'
 
 " Project navigation
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-grepper'
 Plug 'scrooloose/nerdtree'
-Plug 'vim-scripts/ctags.vim'              " ctags related stuff
-Plug 'majutsushi/tagbar'
 Plug 'eugen0329/vim-esearch'
 Plug 'jistr/vim-nerdtree-tabs'
+"Plug 'mhinz/vim-grepper'
+"Plug 'majutsushi/tagbar'
+"Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 
 " File navigation
 Plug 'Lokaltog/vim-easymotion'
-Plug 'haya14busa/incsearch.vim'
+"Plug 'haya14busa/incsearch.vim'
 
 " Editing
 Plug 'tpope/vim-surround'
@@ -51,11 +55,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Code assist
-Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install tern' }
+"Plug 'janko-m/vim-test'
 
 " Extras
 Plug 'christoomey/vim-tmux-navigator'
@@ -80,13 +84,15 @@ set mouse=a
 " Usable base16 themes
 "base16-classic-dark
 "base16-material-darker
-"base16-brewer
-"base16-chalk
-let base16colorspace=256
+"let base16colorspace=256
+"let g:solarized_termcolors=256
 syntax enable
 set background=dark
-set termguicolors
-colorscheme gruvbox
+"set termguicolors
+colorscheme darcula
+"colorscheme solarized
+"colorscheme gruvbox
+
 let g:airline_theme='deep_space'
 
 let g:deoplete#enable_at_startup = 1
@@ -96,7 +102,11 @@ set completeopt-=preview
 set guifont=DroidSansMono\ Nerd\ Font:h11
 let g:airline_powerline_fonts = 1
 
-"let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_fixers = {
+\ 'typescript': ['tslint'],
+\ 'javascript': ['eslint']
+\}
+let g:ale_fix_on_save = 1
 
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
@@ -311,8 +321,8 @@ autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(co
 
 noremap  <silent><space>wp :pc!<CR>
 
-let g:ale_fixers = {
-      \   'javascript': ['eslint'],
-      \}
+"let g:ale_fixers = {
+      "\   'javascript': ['eslint'],
+      "\}
 
 noremap <F2> :ALENextWrap<CR>

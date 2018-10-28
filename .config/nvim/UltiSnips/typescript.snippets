@@ -1,0 +1,131 @@
+snippet log
+console.log('$1: ', ${1})
+endsnippet
+
+snippet af
+(${1}) => ${2}
+endsnippet
+
+snippet afb
+(${1}) => {
+  ${2}
+}
+endsnippet
+
+snippet afb
+(${1}) => {
+  ${2}
+}
+endsnippet
+
+snippet bef
+beforeEach(() => {
+  ${1}
+});
+endsnippet
+
+snippet called
+expect(${1}).to.have.been.calledWith(${2});
+endsnippet
+
+snippet co
+const ${1};
+endsnippet
+
+snippet co=
+const ${1} = ${2}
+endsnippet
+
+snippet con
+constructor(props) {
+  super(props);
+}
+endsnippet
+
+snippet des
+describe('${1}', () => {
+  ${2}
+});
+endsnippet
+
+snippet ed
+export default {${1}};
+endsnippet
+
+snippet ei
+else if (${1}) {
+  ${2}
+}
+endsnippet
+
+snippet el
+else {
+  ${1}
+}
+endsnippet
+
+snippet exi
+expect(component.find('${1}').exists()).to.be.true;
+endsnippet
+
+snippet if
+if (${1}) {
+  ${2}
+}
+endsnippet
+
+snippet ife
+if (${1}) {
+  ${2}
+} else {
+	${3}
+}
+endsnippet
+
+snippet im
+import ${1} from './$1';
+endsnippet
+
+snippet ipt
+import PropTypes from 'prop-types';
+endsnippet
+
+snippet it
+it('${1}', () => {
+});
+endsnippet
+
+snippet l
+let ${1};
+endsnippet
+
+snippet l=
+let ${1} = ${2};
+endsnippet
+
+snippet pt
+${1}.propTypes = {
+  {2}: PropTypes.${3}.isRequired,${4}
+};
+endsnippet
+
+snippet react
+import React from 'react';
+endsnippet
+
+snippet shallow
+require('../../testutil/testglobals');
+import React from 'react';
+import { shallow } from 'enzyme';
+import ${1} from './$1';
+
+describe('$1', () => {
+  let component;
+  beforeEach(() => {
+    component = shallow(<$1 />);
+  });
+  
+});
+
+endsnippet
+
