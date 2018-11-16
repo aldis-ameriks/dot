@@ -111,3 +111,9 @@ export GOPATH=$HOME/Go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/aldis.ameriks/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/aldis.ameriks/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/aldis.ameriks/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/aldis.ameriks/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

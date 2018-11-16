@@ -174,7 +174,7 @@ let nerdtree_tabs_open_on_console_startup = 2
 let nerdtree_tabs_smart_startup_focus = 2
 
 " Mapping for finding files in project
-nnoremap <silent><C-P> :GFiles<CR>
+nnoremap <silent><C-P> :Files<CR>
 nnoremap <silent><C-E> :Windows<CR>
 nnoremap <silent><C-A-E> :History<CR>
 nnoremap <silent><space>f :Grepper<cr>
@@ -256,9 +256,9 @@ map <Leader>vz :call VimuxZoomRunner()<CR>
 
 " Copy paste to clipboard
 noremap ty "+y
-noremap tY "+Y  // copy a whole line to the clipboard
-noremap tp "+p  // put the text from clipboard after the cursor
-noremap tP "+P  // put the text from clipboard before the cursor
+noremap tY "+Y
+noremap tp "+p
+noremap tP "+P
 
 " Switch to last open tab
 let g:lasttab = 1
