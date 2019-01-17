@@ -174,8 +174,10 @@ let nerdtree_tabs_open_on_console_startup = 2
 let nerdtree_tabs_smart_startup_focus = 2
 
 " Mapping for finding files in project
-nnoremap <silent><C-P> :Files<CR>
+nnoremap <silent><C-P> :GFiles<CR>
+nnoremap <silent><C-A-P> :Files<CR>
 nnoremap <silent><C-E> :Windows<CR>
+nmap <silent><space>b :Buffers<CR>
 nnoremap <silent><C-A-E> :History<CR>
 nnoremap <silent><space>f :Grepper<cr>
 nnoremap <silent><leader>f :Grepper<cr>
@@ -216,6 +218,9 @@ nnoremap [q :cprev<CR>
 " Add file preview when using fzf
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+"command! -bang -nargs=? -complete=dir GFiles
+  "\ call fzf#vim#gfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 let g:AutoClosePumvisible = {"ENTER": "", "ESC": ""}
 inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup()."\<CR>" : "\<CR>"
@@ -318,6 +323,7 @@ noremap <space>o :noh<CR>
 
 autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+nmap <silent><space>; :CommaOrSemiColon<CR>
 
 noremap  <silent><space>wp :pc!<CR>
 
