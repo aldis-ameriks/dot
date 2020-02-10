@@ -1,4 +1,4 @@
-export ZSH=/Users/aldis/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 plugins=(git colored-man colorize github jira virtualenv pip python osx zsh-syntax-highlighting docker yarn)
 ZSH_THEME="robbyrussell"
